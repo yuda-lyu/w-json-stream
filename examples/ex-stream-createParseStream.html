@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-tw">
+
+    <head>
+        <meta http-equiv="content-type" content="text/html charset=UTF-8" />
+        <title>w-json createParseStream [Not support IE11]</title>
+
+        <!-- @babel/polyfill已廢棄 -->
+        <script nomodule src="https://cdn.jsdelivr.net/npm/@babel/polyfill@7.12.1/dist/polyfill.min.js"></script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/wsemi/dist/wsemi.umd.js"></script>
+    
+        <script src="https://cdn.jsdelivr.net/npm/w-json@1.0.1/dist/w-json.umd.js"></script>
+        <script _src="../dist/w-json.ww.umd.js"></script>
+
+        <script>
+            console.log('ReadableStream is not support IE11')
+
+            let json = window['w-json']
+            console.log(json)
+
+            async function testStream(){
+                let accumulator = {}
+
+                let t=0
+                let timer=setInterval(function(){
+                    console.log('t',t/10+'(s)')
+                    t++
+                    if(t>50){
+                        clearInterval(timer)
+                    }
+                },100)
+
+                //url
+                let url = 'https://raw.githubusercontent.com/apache/echarts/master/test/data/flight.json'
+
+                //createParseStream
+                let parseStream = json.createParseStream()
+                // console.log('parseStream',parseStream)
+
+                //onData
+                parseStream.on('data', function(chunk) {
+                    console.log('parseStream data chunk=', chunk)
+                    accumulator[chunk.key] = chunk.value
+                })
+
+                //onEnd
+                parseStream.on('end', function() {
+                    console.log('parseStream end accumulator=', accumulator)
+                })
+
+                //onError
+                parseStream.on('error', function(err) {
+                    console.log('parseStream error',err)
+                })
+
+                //webReadableStream
+                let webReadableStream = await fetch(url)
+                    .then((response) => {
+
+                        //reader, body is ReadableStream
+                        let reader = response.body.getReader()
+
+                        //https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Using_readable_streams
+                        return new ReadableStream({
+                            start(controller) {
+                                console.log('start(controller)')
+                                function push() {
+                                    console.log('------------ push')
+                                    reader.read()
+                                        .then(({ done, value }) => { 
+                                            console.log('reader.read()', done, value)
+
+                                            setTimeout(()=>{ //delay for show
+
+                                                if (done) {
+
+                                                    //controller close
+                                                    controller.close()
+
+                                                    //parseStream end
+                                                    parseStream.end()
+
+                                                    return
+                                                }
+                                                // console.log('get chunk(Uint8Array)', value) 
+
+                                                //str
+                                                let str = wsemi.u8arr2str(value)
+                                                console.log('chunk to string',wsemi.strleft(str,200)+'...')
+
+                                                //controller enqueue
+                                                controller.enqueue(value) 
+
+                                                //parseStream write
+                                                let b = parseStream.write(str)
+                                                // console.log('write result',b)
+
+                                                //check backpressure and push
+                                                if(b){
+                                                    push()
+                                                }
+
+                                            },300)
+
+                                        })
+                                }
+                                push()
+                            }
+                        })
+
+                    })
+                console.log('webReadableStream', webReadableStream)
+                // => ReadableStream {locked: false}
+
+                //ReadableStream可用Response接並將stream轉出成text
+                // .then(stream => {
+                //     return new Response(stream, { headers: { 'Content-Type': 'text/json' } }).text()
+                // })
+                // .then(res => {
+                //     console.log(wsemi.strleft(res,200)+'...')
+                // })
+
+            }
+            testStream()
+                .catch((err) => {
+                    console.log(err)
+                })
+
+        </script>
+
+    </head>
+
+    <body>
+        See console.log
+        <div style="color:#f26; font-size:0.9rem;">ReadableStream is not support IE11</div>
+    </body>
+
+</html>

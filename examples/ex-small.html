@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-tw">
+
+    <head>
+        <meta http-equiv="content-type" content="text/html charset=UTF-8" />
+        <title>w-json stringify and parse for small data</title>
+
+        <!-- @babel/polyfill已廢棄 -->
+        <script nomodule src="https://cdn.jsdelivr.net/npm/@babel/polyfill@7.12.1/dist/polyfill.min.js"></script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/wsemi/dist/wsemi.umd.js"></script>
+    
+        <script src="https://cdn.jsdelivr.net/npm/w-json@1.0.1/dist/w-json.umd.js"></script>
+        <script _src="../dist/w-json.ww.umd.js"></script>
+
+        <script>
+
+            let json = window['w-json']
+            console.log(json)
+
+            console.log('build data...')
+            let n = 3000
+            let carr = ''
+            let arr = []
+            for(let i=1;i<=n;i++){
+                arr.push({
+                    key: 'k'+i,
+                    value: i,
+                })
+            }
+            let cobj = ''
+            let obj = {}
+            for(let i=1;i<=n;i++){
+                obj['k'+i]=i
+            }
+            console.log('build data finish')
+    
+            let t=0
+            let timer=setInterval(function(){
+                console.log('t',t/10+'(s)')
+                t++
+                if(t>50){
+                    clearInterval(timer)
+                }
+            },100)
+
+            let pmArr = json.stringify(arr) 
+                .then(function(res){
+                    console.log('json.stringify(arr) then',wsemi.strleft(res,200)+'...')
+                    carr = res
+                })
+                .catch(function(err){
+                    console.log('json.stringify(arr) catch',err)
+                })
+           
+            let pmObj = json.stringify(obj)
+                .then(function(res){
+                    console.log('json.stringify(obj) then',wsemi.strleft(res,200)+'...')
+                    cobj = res
+                })
+                .catch(function(err){
+                    console.log('json.stringify(obj) catch',err)
+                })
+                
+            Promise.all([pmArr,pmObj])
+                .then(function(){
+
+                    json.parse(carr) 
+                        .then(function(r){
+                            console.log('json.parse(carr) then',r)
+                        })
+                        .catch(function(err){
+                            console.log('json.parse(carr) catch',err)
+                        })
+                    
+                    json.parse(cobj) 
+                        .then(function(r){
+                            console.log('json.parse(cobj) then',r)
+                        })
+                        .catch(function(err){
+                            console.log('json.parse(cobj) catch',err)
+                        })
+                    
+                })
+                .catch(function(err){
+                    console.log(err)
+                })
+            
+        </script>
+
+    </head>
+
+    <body>
+        See console.log
+    </body>
+
+</html>
