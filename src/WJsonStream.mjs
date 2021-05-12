@@ -198,7 +198,7 @@ function createStringifyStream(data) {
  *
  * @returns {Object} 回傳JONS物件，提供stringify與parse函數，兩個皆為ansyc函數
  */
-let WJson = {
+let WJsonStream = {
     parse,
     parseByStream,
     createParseStream,
@@ -207,5 +207,5 @@ let WJson = {
     createStringifyStream,
 }
 
-export default WJson
+export default WJsonStream
 

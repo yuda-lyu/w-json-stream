@@ -1,5 +1,5 @@
-import json from './src/WJson.mjs'
-// import json from './dist/w-json.umd.js'
+import json from './src/WJsonStream.mjs'
+// import json from './dist/w-json-stream.umd.js'
 
 
 async function testSmall() {

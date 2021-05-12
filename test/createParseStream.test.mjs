@@ -1,7 +1,7 @@
 import fs from 'fs'
 import assert from 'assert'
 import genPm from 'wsemi/src/genPm.mjs'
-import json from '../src/WJson.mjs'
+import json from '../src/WJsonStream.mjs'
 
 
 describe(`createParseStream`, function() {

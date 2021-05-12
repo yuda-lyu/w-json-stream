@@ -1,5 +1,5 @@
 import assert from 'assert'
-import json from '../src/WJson.mjs'
+import json from '../src/WJsonStream.mjs'
 
 
 describe(`parseByStream`, function() {

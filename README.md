@@ -1,26 +1,26 @@
-# w-json
+# w-json-stream
 A tool for JSON parse and stringify by stream and web worker.
 
 ![language](https://img.shields.io/badge/language-JavaScript-orange.svg) 
-[![npm version](http://img.shields.io/npm/v/w-json.svg?style=flat)](https://npmjs.org/package/w-json) 
-[![Build Status](https://travis-ci.org/yuda-lyu/w-json.svg?branch=master)](https://travis-ci.org/yuda-lyu/w-json) 
-[![license](https://img.shields.io/npm/l/w-json.svg?style=flat)](https://npmjs.org/package/w-json) 
-[![gzip file size](http://img.badgesize.io/yuda-lyu/w-json/master/dist/w-json.umd.js.svg?compression=gzip)](https://github.com/yuda-lyu/w-json)
-[![npm download](https://img.shields.io/npm/dt/w-json.svg)](https://npmjs.org/package/w-json) 
-[![jsdelivr download](https://img.shields.io/jsdelivr/npm/hm/w-json.svg)](https://www.jsdelivr.com/package/npm/w-json)
+[![npm version](http://img.shields.io/npm/v/w-json-stream.svg?style=flat)](https://npmjs.org/package/w-json-stream) 
+[![Build Status](https://travis-ci.org/yuda-lyu/w-json-stream.svg?branch=master)](https://travis-ci.org/yuda-lyu/w-json-stream) 
+[![license](https://img.shields.io/npm/l/w-json-stream.svg?style=flat)](https://npmjs.org/package/w-json-stream) 
+[![gzip file size](http://img.badgesize.io/yuda-lyu/w-json-stream/master/dist/w-json-stream.umd.js.svg?compression=gzip)](https://github.com/yuda-lyu/w-json-stream)
+[![npm download](https://img.shields.io/npm/dt/w-json-stream.svg)](https://npmjs.org/package/w-json-stream) 
+[![jsdelivr download](https://img.shields.io/jsdelivr/npm/hm/w-json-stream.svg)](https://www.jsdelivr.com/package/npm/w-json-stream)
 
 ## Documentation
-To view documentation or get support, visit [docs](https://yuda-lyu.github.io/w-json/global.html).
+To view documentation or get support, visit [docs](https://yuda-lyu.github.io/w-json-stream/global.html).
 
 ## Installation
 ### Using npm(ES6 module):
-> **Note:** w-json is mainly dependent on `into-stream`, `json-stream-stringify` and `jsonparse`.
+> **Note:** w-json-stream is mainly dependent on `into-stream`, `json-stream-stringify` and `jsonparse`.
 ```alias
-npm i w-json
+npm i w-json-stream
 ```
 
 #### Example for samll data:
-> **Link:** [[dev source code](https://github.com/yuda-lyu/w-json/blob/master/g.small.mjs)]
+> **Link:** [[dev source code](https://github.com/yuda-lyu/w-json-stream/blob/master/g.small.mjs)]
 ```alias
 
 async function testSmall() {
@@ -94,7 +94,7 @@ testSmall()
 ```
 
 #### Example for large data:
-> **Link:** [[dev source code](https://github.com/yuda-lyu/w-json/blob/master/g.large.mjs)]
+> **Link:** [[dev source code](https://github.com/yuda-lyu/w-json-stream/blob/master/g.large.mjs)]
 ```alias
 
 async function testLarge() {
@@ -161,7 +161,7 @@ testLarge()
 ```
 
 #### Example for stream:
-> **Link:** [[dev source code](https://github.com/yuda-lyu/w-json/blob/master/g.stream.mjs)]
+> **Link:** [[dev source code](https://github.com/yuda-lyu/w-json-stream/blob/master/g.stream.mjs)]
 ```alias
 
 async function testStream() {
@@ -301,29 +301,29 @@ testStream()
 ```
 
 ### In a browser(UMD module):
-> **Note:** w-json is not dependent on any package.
+> **Note:** w-json-stream is not dependent on any package.
 
-[Necessary] Add script for w-json.
+[Necessary] Add script for w-json-stream.
 ```alias
-<script src="https://cdn.jsdelivr.net/npm/w-json@1.0.1/dist/w-json.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/w-json-stream@1.0.2/dist/w-json-stream.umd.js"></script>
 ```
 
-> **stringify and parse for small data:** [ex-small.html](https://yuda-lyu.github.io/w-json/examples/ex-small.html) [[source code](https://github.com/yuda-lyu/w-json/blob/master/docs/examples/ex-small.html)]
+> **stringify and parse for small data:** [ex-small.html](https://yuda-lyu.github.io/w-json-stream/examples/ex-small.html) [[source code](https://github.com/yuda-lyu/w-json-stream/blob/master/docs/examples/ex-small.html)]
 
-> **stringifyByStream and parseByStream for small data:** [ex-small-stream.html](https://yuda-lyu.github.io/w-json/examples/ex-small-stream.html) [[source code](https://github.com/yuda-lyu/w-json/blob/master/docs/examples/ex-small-stream.html)]
+> **stringifyByStream and parseByStream for small data:** [ex-small-stream.html](https://yuda-lyu.github.io/w-json-stream/examples/ex-small-stream.html) [[source code](https://github.com/yuda-lyu/w-json-stream/blob/master/docs/examples/ex-small-stream.html)]
 
-> **stringify and parse for large data:** [ex-large.html](https://yuda-lyu.github.io/w-json/examples/ex-large.html) [[source code](https://github.com/yuda-lyu/w-json/blob/master/docs/examples/ex-large.html)]
+> **stringify and parse for large data:** [ex-large.html](https://yuda-lyu.github.io/w-json-stream/examples/ex-large.html) [[source code](https://github.com/yuda-lyu/w-json-stream/blob/master/docs/examples/ex-large.html)]
 
-> **createParseStream [Not support IE11]:** [ex-stream-createParseStream.html](https://yuda-lyu.github.io/w-json/examples/ex-stream-createParseStream.html) [[source code](https://github.com/yuda-lyu/w-json/blob/master/docs/examples/ex-stream-createParseStream.html)]
+> **createParseStream [Not support IE11]:** [ex-stream-createParseStream.html](https://yuda-lyu.github.io/w-json-stream/examples/ex-stream-createParseStream.html) [[source code](https://github.com/yuda-lyu/w-json-stream/blob/master/docs/examples/ex-stream-createParseStream.html)]
 
-> **createStringifyStream [Not support IE11 and Firefox]:** [ex-stream-createStringifyStream.html](https://yuda-lyu.github.io/w-json/examples/ex-stream-createStringifyStream.html) [[source code](https://github.com/yuda-lyu/w-json/blob/master/docs/examples/ex-stream-createStringifyStream.html)]
+> **createStringifyStream [Not support IE11 and Firefox]:** [ex-stream-createStringifyStream.html](https://yuda-lyu.github.io/w-json-stream/examples/ex-stream-createStringifyStream.html) [[source code](https://github.com/yuda-lyu/w-json-stream/blob/master/docs/examples/ex-stream-createStringifyStream.html)]
 
-> **stringify and parse for large data in web worker [Not support IE11]:** [ex-large-webworker.html](https://yuda-lyu.github.io/w-json/examples/ex-large-webworker.html) [[source code](https://github.com/yuda-lyu/w-json/blob/master/docs/examples/ex-large-webworker.html)]
+> **stringify and parse for large data in web worker [Not support IE11]:** [ex-large-webworker.html](https://yuda-lyu.github.io/w-json-stream/examples/ex-large-webworker.html) [[source code](https://github.com/yuda-lyu/w-json-stream/blob/master/docs/examples/ex-large-webworker.html)]
 ```alias
 
 console.log('web worker is not support IE11')
 
-let json = window['w-json']
+let json = window['w-json-stream']
 console.log(json)
 
 console.log('build data...')

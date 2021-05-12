@@ -1,8 +1,8 @@
 {
-  "name": "w-json",
-  "version": "1.0.1",
+  "name": "w-json-stream",
+  "version": "1.0.2",
   "description": "A tool for JSON parse and stringify by stream and web worker.",
-  "main": "dist/w-json.umd.js",
+  "main": "dist/w-json-stream.umd.js",
   "dependencies": {
     "into-stream": "^7.0.0",
     "json-stream-stringify": "^2.0.3",
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yuda-lyu/w-json.git"
+    "url": "git+https://github.com/yuda-lyu/w-json-stream.git"
   },
   "keywords": [
     "package",
@@ -38,7 +38,7 @@
   "author": "yuda-lyu(semisphere)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yuda-lyu/w-json/issues"
+    "url": "https://github.com/yuda-lyu/w-json-stream/issues"
   },
-  "homepage": "https://github.com/yuda-lyu/w-json#readme"
+  "homepage": "https://github.com/yuda-lyu/w-json-stream#readme"
 }
