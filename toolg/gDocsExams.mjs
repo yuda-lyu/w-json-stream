@@ -14,8 +14,9 @@ function main() {
     //pks
     let pks = getPks()
 
-    //cdn
-    let cdn = `<script src="https://cdn.jsdelivr.net/npm/w-json-stream@${pks.version}/dist/w-json-stream.umd.js"></script>`
+    //url
+    let url = `https://cdn.jsdelivr.net/npm/w-json-stream@${pks.version}/dist/w-json-stream.umd.js`
+    let urlww = `https://cdn.jsdelivr.net/npm/w-json-stream@${pks.version}/dist/w-json-stream.ww.umd.js`
 
     //mkdirSync
     if (!fs.existsSync(fdTar)) {
@@ -34,8 +35,11 @@ function main() {
         let c = fs.readFileSync(fn, 'utf8')
 
         //replace
-        let r = `<script src="../dist/w-json-stream.umd.js"></script>`
-        c = c.replace(r, cdn)
+        let r
+        r = `../dist/w-json-stream.umd.js`
+        c = c.replace(r, url)
+        r = `../dist/w-json-stream.ww.umd.js`
+        c = c.replace(r, urlww)
 
         //write
         //console.log(c)
