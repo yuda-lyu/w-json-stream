@@ -20,7 +20,7 @@ npm i w-json-stream
 ```
 
 #### Example for samll data:
-> **Link:** [[dev source code](https://github.com/yuda-lyu/w-json-stream/blob/master/g.small.mjs)]
+> **Link:** [[dev source code](https://github.com/yuda-lyu/w-json-stream/blob/master/g-small.mjs)]
 ```alias
 
 async function testSmall() {
@@ -94,7 +94,7 @@ testSmall()
 ```
 
 #### Example for large data:
-> **Link:** [[dev source code](https://github.com/yuda-lyu/w-json-stream/blob/master/g.large.mjs)]
+> **Link:** [[dev source code](https://github.com/yuda-lyu/w-json-stream/blob/master/g-large.mjs)]
 ```alias
 
 async function testLarge() {
@@ -161,7 +161,7 @@ testLarge()
 ```
 
 #### Example for stream:
-> **Link:** [[dev source code](https://github.com/yuda-lyu/w-json-stream/blob/master/g.stream.mjs)]
+> **Link:** [[dev source code](https://github.com/yuda-lyu/w-json-stream/blob/master/g-stream.mjs)]
 ```alias
 
 async function testStream() {
