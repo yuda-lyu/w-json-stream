@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-tw">
+
+    <head>
+        <meta http-equiv="content-type" content="text/html charset=UTF-8" />
+        <title>w-json createStringifyStream [Not support IE11 and Firefox]</title>
+
+        <!-- @babel/polyfill已廢棄 -->
+        <script nomodule src="https://cdn.jsdelivr.net/npm/@babel/polyfill@7.12.1/dist/polyfill.min.js"></script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/wsemi/dist/wsemi.umd.js"></script>
+    
+        <script src="../dist/w-json.umd.js"></script>
+        <script _src="../dist/w-json.ww.umd.js"></script>
+
+        <script>
+            console.log('WritableStream is not support IE11 and Firefox')
+
+            let json = window['w-json']
+            console.log(json)
+
+            async function testStream(){
+                let stringified = ''
+
+                let t=0
+                let timer=setInterval(function(){
+                    console.log('t',t/10+'(s)')
+                    t++
+                    if(t>50){
+                        clearInterval(timer)
+                    }
+                },100)
+
+                //arr
+                let n = 1 //4000000
+                let arr = []
+                for (let i = 1; i <= n; i++) {
+                    arr.push({
+                        key: 'k' + i,
+                        value: {
+                            a: 123,
+                            b: 145.67,
+                            c: 'test中文1',
+                            d: true,
+                            f: [11, 'xyz', false, [166, 197, 215]],
+                            g: {
+                                ga: 223,
+                                gb: 245.67,
+                                gc: 'test中文2',
+                                gd: [66, 97, 115],
+                            },
+                        }
+                    })
+                }
+
+                //webWritableStream, https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Using_writable_streams
+                let queuingStrategy = new CountQueuingStrategy({ highWaterMark: 1 })
+                let webWritableStream = new WritableStream({
+                    write(chunk) {
+                        let pm = wsemi.genPm()
+
+                        setTimeout(()=>{ //delay for show
+                            console.log('webWritableStream write', chunk)
+                        
+                            //str
+                            let str = wsemi.u8arr2str(chunk)
+                            console.log('chunk to string', str)
+
+                            //add
+                            stringified += str
+
+                            pm.resolve()
+                        },75)
+                        
+                        return pm
+                    },
+                    close() {
+                        console.log('webWritableStream close stringified=', stringified)
+                    },
+                    abort(err) {
+                        console.log('webWritableStream error', err)
+                    }
+                }, queuingStrategy)
+
+                //writerStream
+                let writerStream = webWritableStream.getWriter()
+
+                //await ready, WritableStreamDefaultWriter.readyRead only Returns a Promise that resolves when the desired size of the stream's internal queue transitions from non-positive to positive, signaling that it is no longer applying backpressure.
+                await writerStream.ready
+    
+                //createStringifyStream
+                let stringifyStream = json.createStringifyStream(arr)
+
+                //stringifyStream onData
+                stringifyStream.on('data', function(chunk) {
+                    writerStream.write(chunk)
+                })
+
+                //stringifyStream onEnd
+                stringifyStream.on('end', function() {
+                    writerStream.close()
+                })
+
+            }
+            testStream()
+                .catch((err) => {
+                    console.log(err)
+                })
+
+        </script>
+
+    </head>
+
+    <body>
+        See console.log
+        <div style="color:#f26; font-size:0.9rem;">WritableStream is not support IE11 and Firefox</div>
+    </body>
+
+</html>
