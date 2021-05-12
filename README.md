@@ -14,7 +14,7 @@ To view documentation or get support, visit [docs](https://yuda-lyu.github.io/w-
 
 ## Installation
 ### Using npm(ES6 module):
-> **Note:** w-json-stream is mainly dependent on `into-stream`, `json-stream-stringify` and `jsonparse`.
+> **Note:** w-json-stream is mainly dependent on `from2` and `jsonparse`.
 ```alias
 npm i w-json-stream
 ```
@@ -305,7 +305,7 @@ testStream()
 
 [Necessary] Add script for w-json-stream.
 ```alias
-<script src="https://cdn.jsdelivr.net/npm/w-json-stream@1.0.4/dist/w-json-stream.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/w-json-stream@1.0.5/dist/w-json-stream.umd.js"></script>
 ```
 
 > **stringify and parse for small data:** [ex-small.html](https://yuda-lyu.github.io/w-json-stream/examples/ex-small.html) [[source code](https://github.com/yuda-lyu/w-json-stream/blob/master/docs/examples/ex-small.html)]
