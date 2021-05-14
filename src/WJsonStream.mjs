@@ -99,7 +99,7 @@ function parseByStream(str) {
 
 
 /**
- * JSON反序裂化的stream
+ * JSON反序列化的stream
  *
  * @param {String|Array} [filter='$*'] 輸入過濾字串或陣列，預設'$*'
  * @return {Stream} 回傳Stream，為Nodejs的stream物件

@@ -1,6 +1,6 @@
 {
   "name": "w-json-stream",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A tool for JSON parse and stringify by stream and web worker.",
   "main": "dist/w-json-stream.umd.js",
   "dependencies": {
@@ -10,7 +10,7 @@
     "wsemi": "^1.5.77"
   },
   "devDependencies": {
-    "w-package-tools": "^1.0.54"
+    "w-package-tools": "^1.0.55"
   },
   "scripts": {
     "test": "mocha --parallel --timeout 60000 --experimental-modules --es-module-specifier-resolution=node",
