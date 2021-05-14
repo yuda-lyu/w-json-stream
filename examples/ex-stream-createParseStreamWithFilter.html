@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-tw">
+
+    <head>
+        <meta http-equiv="content-type" content="text/html charset=UTF-8" />
+        <title>w-json-stream createParseStream with filter</title>
+
+        <!-- @babel/polyfill已廢棄 -->
+        <script nomodule src="https://cdn.jsdelivr.net/npm/@babel/polyfill@7.12.1/dist/polyfill.min.js"></script>
+    
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/wsemi/dist/wsemi.umd.js"></script>
+    
+        <script src="../dist/into-stream.umd.js"></script>
+        <script src="../dist/w-json-stream.umd.js"></script>
+        <script _src="../dist/w-json-stream.ww.umd.js"></script>
+
+        <script>
+            console.log('ReadableStream is not support IE11')
+
+            let intoStream = window['into-stream']
+            console.log('intoStream',intoStream)
+            let json = window['w-json-stream']
+            console.log(json)
+
+            async function testStreamFromString(pre, filter){
+                return new Promise(function(resolve, reject){
+                    let accumulator = {}
+
+                    let arr = [
+                        { 
+                            key: "k1",
+                            value: {
+                                a: 123,
+                                b: 145.67,
+                                c: 'test中文1',
+                                d: true,
+                                f: [11, 'xyz', false, [166, 197, 215]],
+                                g: {
+                                    ga: 223,
+                                    gb: 245.67,
+                                    gc: 'test中文2',
+                                    gd: [66, 97, 115],
+                                },
+                            },
+                        },
+                        {
+                            child: [
+                                { name: "child:abc", labels: ["child:label-abc"] },
+                                { name: "child:def", labels: ["child:label-def"] },
+                                true,
+                                false,
+                                2020,
+                                { 
+                                    name: "child:xyz", 
+                                    query: {
+                                        labels: ["child:query:label-xyz"]
+                                    } 
+                                },
+                            ],
+                        },
+                        { name: "abc", labels: ["label-abc"] },
+                        { name: "def", labels: ["label-def"] },
+                        true,
+                        false,
+                        -1,
+                        { 
+                            name: "xyz", 
+                            query: {
+                                labels: ["query:label-xyz"]
+                            } 
+                        },
+                    ]
+                    let jarr = JSON.stringify(arr)
+                    // console.log('jarr', jarr)
+
+                    //intoStream
+                    let sourceStream = intoStream(jarr)
+
+                    //createParseStream
+                    let parseStream = json.createParseStream(filter)
+                    // console.log('parseStream',parseStream)
+
+                    //onData
+                    parseStream.on('data', function(chunk) {
+                        console.log(pre, 'parseStream data chunk=', chunk)
+                        _.set(accumulator,chunk.path,chunk.value)
+                    })
+
+                    //onEnd
+                    parseStream.on('end', function() {
+                        console.log(pre, 'parseStream end accumulator=', accumulator)
+                        resolve(accumulator)
+                    })
+
+                    //onError
+                    parseStream.on('error', function(err) {
+                        console.log(pre, 'parseStream error',err)
+                    })
+
+                    //pipe
+                    sourceStream.pipe(parseStream)
+
+                })
+            }
+
+            async function testStreams(){
+                let filter
+
+                filter = '*.labels' //無emit, 只能監聽onData個別處理
+                console.log('\ntest1', filter)
+                await testStreamFromString('test1', filter) 
+
+                filter = [true, 'labels', {emitPath: true}]
+                console.log('\ntest2', filter, 'true=*, 開啟emitPath才能塞回物件取得過濾後結果')
+                await testStreamFromString('test2', filter)
+
+                filter = [{recurse: true}, 'labels', {emitPath: true}]
+                console.log('\ntest3', filter, '開啟recurse代表為任意子節點, 開啟emitPath才能塞回物件取得過濾後結果')
+                await testStreamFromString('test3', filter)
+
+            }
+            testStreams()
+                .catch((err) => {
+                        console.log(err)
+                    })
+
+
+        </script>
+
+    </head>
+
+    <body>
+        See console.log
+    </body>
+
+</html>

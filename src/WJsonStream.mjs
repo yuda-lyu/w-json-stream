@@ -9,6 +9,7 @@ import JsonStreamStringify from './JsonStreamStringify.mjs' //json-stream-string
 import get from 'lodash/get'
 import isNumber from 'lodash/isNumber'
 import isestr from 'wsemi/src/isestr.mjs'
+import isearr from 'wsemi/src/isearr.mjs'
 import isarr from 'wsemi/src/isarr.mjs'
 import isobj from 'wsemi/src/isobj.mjs'
 import isstr from 'wsemi/src/isstr.mjs'
@@ -97,9 +98,21 @@ function parseByStream(str) {
 }
 
 
-function createParseStream() {
+/**
+ * JSON反序裂化的stream
+ *
+ * @param {String|Array} [filter='$*'] 輸入過濾字串或陣列，預設'$*'
+ * @return {Stream} 回傳Stream，為Nodejs的stream物件
+ */
+function createParseStream(filter) {
     //無法運行於web worker內, 因會被編譯成async function
-    return JSONStream.parse('$*')
+
+    //check
+    if (!isestr(filter) && !isearr(filter)) {
+        filter = '$*'
+    }
+
+    return JSONStream.parse(filter)
 }
 
 
@@ -179,6 +192,12 @@ function stringifyByStream(data) {
 }
 
 
+/**
+ * JSON序列化的stream
+ *
+ * @param {Object|Array} data 輸入物件或陣列
+ * @return {Stream} 回傳Stream，為Nodejs的stream物件
+ */
 function createStringifyStream(data) {
     //無法運行於web worker內, 因會被編譯成async function
 
@@ -192,9 +211,7 @@ function createStringifyStream(data) {
 
 
 /**
- * 以串流stream的JSON.stringify與JSON.parse
- *
- * See: {@link https://github.com/DonutEspresso/big-json big-json}
+ * 基於串流stream的JSON序列化與反序列化函數
  *
  * @returns {Object} 回傳JONS物件，提供stringify與parse函數，兩個皆為ansyc函數
  */

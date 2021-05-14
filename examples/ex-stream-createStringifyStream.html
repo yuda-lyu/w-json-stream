@@ -19,17 +19,17 @@
             let json = window['w-json-stream']
             console.log(json)
 
+            let t=0
+            let timer=setInterval(function(){
+                console.log('t',t/10+'(s)')
+                t++
+                if(t>50){
+                    clearInterval(timer)
+                }
+            },100)
+
             async function testStream(){
                 let stringified = ''
-
-                let t=0
-                let timer=setInterval(function(){
-                    console.log('t',t/10+'(s)')
-                    t++
-                    if(t>50){
-                        clearInterval(timer)
-                    }
-                },100)
 
                 //arr
                 let n = 1 //4000000
