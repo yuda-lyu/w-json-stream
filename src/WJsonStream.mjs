@@ -213,7 +213,7 @@ function createStringifyStream(data) {
 /**
  * 基於串流stream的JSON序列化(stringify)與反序列化(parse)
  *
- * @returns {Object} 回傳JONS物件，提供stringify與parse函數，兩個皆為ansyc函數
+ * @returns {Object} 回傳物件，其具有stringify、stringifyByStream、createParseStream、parse、parseByStream、createStringifyStream
  */
 let WJsonStream = {
     parse,
