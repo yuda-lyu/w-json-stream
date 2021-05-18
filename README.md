@@ -441,7 +441,13 @@ testStream()
 
 [Necessary] Add script for w-json-stream.
 ```alias
-<script src="https://cdn.jsdelivr.net/npm/w-json-stream@1.0.9/dist/w-json-stream.umd.js"></script>
+
+<!-- for basic -->
+<script src="https://cdn.jsdelivr.net/npm/w-json-stream@1.0.10/dist/w-json-stream.umd.js"></script>
+
+<!-- for web workers -->
+<script src="https://cdn.jsdelivr.net/npm/w-json-stream@1.0.10/dist/w-json-stream.ww.umd.js"></script>
+
 ```
 
 > **stringify and parse for small data:** [ex-small.html](https://yuda-lyu.github.io/w-json-stream/examples/ex-small.html) [[source code](https://github.com/yuda-lyu/w-json-stream/blob/master/docs/examples/ex-small.html)]
