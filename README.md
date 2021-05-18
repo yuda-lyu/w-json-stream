@@ -441,7 +441,7 @@ testStream()
 
 [Necessary] Add script for w-json-stream.
 ```alias
-<script src="https://cdn.jsdelivr.net/npm/w-json-stream@1.0.8/dist/w-json-stream.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/w-json-stream@1.0.9/dist/w-json-stream.umd.js"></script>
 ```
 
 > **stringify and parse for small data:** [ex-small.html](https://yuda-lyu.github.io/w-json-stream/examples/ex-small.html) [[source code](https://github.com/yuda-lyu/w-json-stream/blob/master/docs/examples/ex-small.html)]
@@ -450,16 +450,16 @@ testStream()
 
 > **stringify and parse for large data:** [ex-large.html](https://yuda-lyu.github.io/w-json-stream/examples/ex-large.html) [[source code](https://github.com/yuda-lyu/w-json-stream/blob/master/docs/examples/ex-large.html)]
 
-> **createParseStream [ReadableStream is not support IE11]:** [ex-stream-createParseStream.html](https://yuda-lyu.github.io/w-json-stream/examples/ex-stream-createParseStream.html) [[source code](https://github.com/yuda-lyu/w-json-stream/blob/master/docs/examples/ex-stream-createParseStream.html)]
+> **createParseStream [ReadableStream does not support IE11]:** [ex-stream-createParseStream.html](https://yuda-lyu.github.io/w-json-stream/examples/ex-stream-createParseStream.html) [[source code](https://github.com/yuda-lyu/w-json-stream/blob/master/docs/examples/ex-stream-createParseStream.html)]
 
 > **createParseStream with filter:** [ex-stream-createParseStreamWithFilter.html](https://yuda-lyu.github.io/w-json-stream/examples/ex-stream-createParseStreamWithFilter.html) [[source code](https://github.com/yuda-lyu/w-json-stream/blob/master/docs/examples/ex-stream-createParseStreamWithFilter.html)]
 
-> **createStringifyStream [WritableStream is not support IE11 and Firefox]:** [ex-stream-createStringifyStream.html](https://yuda-lyu.github.io/w-json-stream/examples/ex-stream-createStringifyStream.html) [[source code](https://github.com/yuda-lyu/w-json-stream/blob/master/docs/examples/ex-stream-createStringifyStream.html)]
+> **createStringifyStream [WritableStream does not support IE11 and Firefox]:** [ex-stream-createStringifyStream.html](https://yuda-lyu.github.io/w-json-stream/examples/ex-stream-createStringifyStream.html) [[source code](https://github.com/yuda-lyu/w-json-stream/blob/master/docs/examples/ex-stream-createStringifyStream.html)]
 
-> **stringify and parse for large data in web worker [WebWorkers(from blob) is not support IE11]:** [ex-large-webworker.html](https://yuda-lyu.github.io/w-json-stream/examples/ex-large-webworker.html) [[source code](https://github.com/yuda-lyu/w-json-stream/blob/master/docs/examples/ex-large-webworker.html)]
+> **stringify and parse for large data in web worker [WebWorkers(from blob) does not support IE11]:** [ex-large-webworker.html](https://yuda-lyu.github.io/w-json-stream/examples/ex-large-webworker.html) [[source code](https://github.com/yuda-lyu/w-json-stream/blob/master/docs/examples/ex-large-webworker.html)]
 ```alias
 
-console.log('web worker is not support IE11')
+console.log('web worker does not support IE11')
 
 let json = window['w-json-stream']
 console.log(json)
