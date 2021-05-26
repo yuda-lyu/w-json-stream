@@ -1,6 +1,6 @@
 {
   "name": "w-json-stream",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "A tool for JSON parse and stringify by stream and web worker.",
   "main": "dist/w-json-stream.umd.js",
   "dependencies": {

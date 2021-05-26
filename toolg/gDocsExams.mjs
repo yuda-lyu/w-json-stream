@@ -17,6 +17,7 @@ function main() {
     //url
     let url = `https://cdn.jsdelivr.net/npm/w-json-stream@${pks.version}/dist/w-json-stream.umd.js`
     let urlww = `https://cdn.jsdelivr.net/npm/w-json-stream@${pks.version}/dist/w-json-stream.wk.umd.js`
+    let urlinst = `https://cdn.jsdelivr.net/npm/w-json-stream@${pks.version}/dist/into-stream.umd.js`
 
     //mkdirSync
     if (!fs.existsSync(fdTar)) {
@@ -40,6 +41,8 @@ function main() {
         c = c.replace(r, url)
         r = `../dist/w-json-stream.wk.umd.js`
         c = c.replace(r, urlww)
+        r = `../dist/into-stream.umd.js`
+        c = c.replace(r, urlinst)
 
         //write
         //console.log(c)

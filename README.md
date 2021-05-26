@@ -437,16 +437,16 @@ testStream()
 ```
 
 ### In a browser(UMD module):
-> **Note:** w-json-stream is not dependent on any package.
+> **Note:** w-json-stream does not dependent on any package.
 
 [Necessary] Add script for w-json-stream.
 ```alias
 
 <!-- for basic -->
-<script src="https://cdn.jsdelivr.net/npm/w-json-stream@1.0.11/dist/w-json-stream.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/w-json-stream@1.0.12/dist/w-json-stream.umd.js"></script>
 
 <!-- for web workers -->
-<script src="https://cdn.jsdelivr.net/npm/w-json-stream@1.0.11/dist/w-json-stream.wk.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/w-json-stream@1.0.12/dist/w-json-stream.wk.umd.js"></script>
 
 ```
 
