@@ -460,9 +460,9 @@ testStream()
 
 > **createParseStream with filter:** [ex-stream-createParseStreamWithFilter.html](https://yuda-lyu.github.io/w-json-stream/examples/ex-stream-createParseStreamWithFilter.html) [[source code](https://github.com/yuda-lyu/w-json-stream/blob/master/docs/examples/ex-stream-createParseStreamWithFilter.html)]
 
-> **createStringifyStream:** [ex-stream-createStringifyStream.html](https://yuda-lyu.github.io/w-json-stream/examples/ex-stream-createStringifyStream.html) [[source code](https://github.com/yuda-lyu/w-json-stream/blob/master/docs/examples/ex-stream-createStringifyStream.html)] * WritableStream does not support IE11 and Firefox
+> **createStringifyStream:** [ex-stream-createStringifyStream.html](https://yuda-lyu.github.io/w-json-stream/examples/ex-stream-createStringifyStream.html) [[source code](https://github.com/yuda-lyu/w-json-stream/blob/master/docs/examples/ex-stream-createStringifyStream.html)] * WritableStream does not support IE11 and Firefox.
 
-> **stringify and parse for large data in web worker:** [ex-large-webworker.html](https://yuda-lyu.github.io/w-json-stream/examples/ex-large-webworker.html) [[source code](https://github.com/yuda-lyu/w-json-stream/blob/master/docs/examples/ex-large-webworker.html)] * WebWorkers(from blob) does not support IE11
+> **stringify and parse for large data in web worker:** [ex-large-webworker.html](https://yuda-lyu.github.io/w-json-stream/examples/ex-large-webworker.html) [[source code](https://github.com/yuda-lyu/w-json-stream/blob/master/docs/examples/ex-large-webworker.html)] * WebWorkers(from blob) does not support IE11.
 ```alias
 
 console.log('WebWorkers(from blob) does not support IE11')
