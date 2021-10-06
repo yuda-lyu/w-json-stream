@@ -3,7 +3,6 @@ A tool for JSON parse and stringify by stream and web worker.
 
 ![language](https://img.shields.io/badge/language-JavaScript-orange.svg) 
 [![npm version](http://img.shields.io/npm/v/w-json-stream.svg?style=flat)](https://npmjs.org/package/w-json-stream) 
-[![Build Status](https://travis-ci.org/yuda-lyu/w-json-stream.svg?branch=master)](https://travis-ci.org/yuda-lyu/w-json-stream) 
 [![license](https://img.shields.io/npm/l/w-json-stream.svg?style=flat)](https://npmjs.org/package/w-json-stream) 
 [![gzip file size](http://img.badgesize.io/yuda-lyu/w-json-stream/master/dist/w-json-stream.umd.js.svg?compression=gzip)](https://github.com/yuda-lyu/w-json-stream)
 [![npm download](https://img.shields.io/npm/dt/w-json-stream.svg)](https://npmjs.org/package/w-json-stream) 
