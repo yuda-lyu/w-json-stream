@@ -1,5 +1,6 @@
 //fork from: https://github.com/sindresorhus/into-stream/blob/main/index.js
-import from2 from 'from2'
+// import from2 from 'from2'
+import from2 from './from2.mjs'
 import { Buffer } from 'buffer'
 import { setImmediate } from 'timers'
 import isPromise from 'wsemi/src/ispm.mjs'
