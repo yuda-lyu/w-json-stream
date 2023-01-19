@@ -442,10 +442,10 @@ testStream()
 ```alias
 
 <!-- for basic -->
-<script src="https://cdn.jsdelivr.net/npm/w-json-stream@1.0.16/dist/w-json-stream.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/w-json-stream@1.0.17/dist/w-json-stream.umd.js"></script>
 
 <!-- for web workers -->
-<script src="https://cdn.jsdelivr.net/npm/w-json-stream@1.0.16/dist/w-json-stream.wk.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/w-json-stream@1.0.17/dist/w-json-stream.wk.umd.js"></script>
 
 ```
 
