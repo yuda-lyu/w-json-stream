@@ -1,14 +1,14 @@
 {
   "name": "w-json-stream",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "main": "dist/w-json-stream.umd.js",
   "dependencies": {
     "jsonparse": "^1.3.1",
     "lodash": "^4.17.21",
-    "wsemi": "^1.7.1"
+    "wsemi": "^1.7.2"
   },
   "devDependencies": {
-    "w-package-tools": "^1.0.68"
+    "w-package-tools": "^1.0.69"
   },
   "scripts": {
     "test": "mocha --parallel --timeout 60000 --experimental-modules --es-module-specifier-resolution=node",
