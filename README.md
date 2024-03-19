@@ -6,6 +6,7 @@ A tool for JSON parse and stringify by stream and web worker.
 [![license](https://img.shields.io/npm/l/w-json-stream.svg?style=flat)](https://npmjs.org/package/w-json-stream) 
 [![gzip file size](http://img.badgesize.io/yuda-lyu/w-json-stream/master/dist/w-json-stream.umd.js.svg?compression=gzip)](https://github.com/yuda-lyu/w-json-stream)
 [![npm download](https://img.shields.io/npm/dt/w-json-stream.svg)](https://npmjs.org/package/w-json-stream) 
+[![npm download](https://img.shields.io/npm/dm/w-json-stream.svg)](https://npmjs.org/package/w-json-stream)
 [![jsdelivr download](https://img.shields.io/jsdelivr/npm/hm/w-json-stream.svg)](https://www.jsdelivr.com/package/npm/w-json-stream)
 
 ## Documentation
@@ -442,10 +443,10 @@ testStream()
 ```alias
 
 <!-- for basic -->
-<script src="https://cdn.jsdelivr.net/npm/w-json-stream@1.0.19/dist/w-json-stream.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/w-json-stream@1.0.20/dist/w-json-stream.umd.js"></script>
 
 <!-- for web workers -->
-<script src="https://cdn.jsdelivr.net/npm/w-json-stream@1.0.19/dist/w-json-stream.wk.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/w-json-stream@1.0.20/dist/w-json-stream.wk.umd.js"></script>
 
 ```
 

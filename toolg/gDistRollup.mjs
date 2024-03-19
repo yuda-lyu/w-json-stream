@@ -1,5 +1,5 @@
 import path from 'path'
-// import _ from 'lodash'
+// import _ from 'lodash-es'
 // import rollupFile from 'w-package-tools/src/rollupFile.mjs'
 import rollupFiles from 'w-package-tools/src/rollupFiles.mjs'
 import rollupWorker from 'w-package-tools/src/rollupWorker.mjs'
