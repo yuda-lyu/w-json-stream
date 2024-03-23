@@ -6,8 +6,8 @@ import JSONStream from './JSONStream.mjs' //through內無法轉換stream, 故只
 // import JsonStreamStringify from 'json-stream-stringify/lib/umd.js'
 // import JsonStreamStringify from 'json-stream-stringify/lib/umd.polyfill.js'
 import JsonStreamStringify from './JsonStreamStringify.mjs' //json-stream-stringify需使用umd.polyfill否則會出現setImmediate is not defined, 也無法通過node polyfill修改, 另外fork出來改寫
-import get from 'lodash-es/get'
-import isNumber from 'lodash-es/isNumber'
+import get from 'lodash-es/get.js'
+import isNumber from 'lodash-es/isNumber.js'
 import isestr from 'wsemi/src/isestr.mjs'
 import isearr from 'wsemi/src/isearr.mjs'
 import isarr from 'wsemi/src/isarr.mjs'
