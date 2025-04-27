@@ -1,7 +1,7 @@
-//fork from: https://github.com/dominictarr/through/blob/master/index.js
+//fork from: https://github.com/dominictarr/JSONStream/blob/master/index.js
 import Parser from 'jsonparse'
 import { Buffer } from 'buffer'
-import through from './through.mjs'
+import through from './through.mjs' //統一使用stream, 並改寫為es6, 避免重複減少打包體積
 
 
 // let bufferFrom = Buffer.from && Buffer.from !== Uint8Array.from

@@ -71,4 +71,4 @@ testSmallStream()
     })
 
 
-//node --experimental-modules --es-module-specifier-resolution=node g-small-stream.mjs
+//node g-small-stream.mjs

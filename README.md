@@ -4,17 +4,29 @@ A tool for JSON parse and stringify by stream and web worker.
 ![language](https://img.shields.io/badge/language-JavaScript-orange.svg) 
 [![npm version](http://img.shields.io/npm/v/w-json-stream.svg?style=flat)](https://npmjs.org/package/w-json-stream) 
 [![license](https://img.shields.io/npm/l/w-json-stream.svg?style=flat)](https://npmjs.org/package/w-json-stream) 
-[![gzip file size](http://img.badgesize.io/yuda-lyu/w-json-stream/master/dist/w-json-stream.umd.js.svg?compression=gzip)](https://github.com/yuda-lyu/w-json-stream)
 [![npm download](https://img.shields.io/npm/dt/w-json-stream.svg)](https://npmjs.org/package/w-json-stream) 
 [![npm download](https://img.shields.io/npm/dm/w-json-stream.svg)](https://npmjs.org/package/w-json-stream)
 [![jsdelivr download](https://img.shields.io/jsdelivr/npm/hm/w-json-stream.svg)](https://www.jsdelivr.com/package/npm/w-json-stream)
+
+## Statement
+
+This project is based on modifications and integrations of the following open-source projects:
+
+- Forked from [into-stream](https://github.com/sindresorhus/into-stream) by sindresorhus
+- Forked from [from2](https://github.com/hughsk/from2) by hughsk
+- Forked from [JSONStream](https://github.com/dominictarr/JSONStream) by dominictarr
+- Forked from [through](https://github.com/dominictarr/through) by dominictarr
+- Forked from [json-stream-stringify](https://github.com/Faleij/json-stream-stringify) by Faleij
+
+The original projects are licensed under the MIT License, and this project is also distributed under the MIT License.
+
+Special thanks to the original authors for their outstanding contributions — without their work, this project would not exist. 🙏
 
 ## Documentation
 To view documentation or get support, visit [docs](https://yuda-lyu.github.io/w-json-stream/global.html).
 
 ## Installation
 ### Using npm(ES6 module):
-> **Note:** w-json-stream is mainly dependent on `from2` and `jsonparse`.
 ```alias
 npm i w-json-stream
 ```
@@ -129,7 +141,7 @@ async function testLarge() {
 
         try {
             let res = JSON.stringify(lgArr)
-            console.log('JSON.stringify(lgArr)', res.length, res.substr(0, 200) + '...')
+            console.log('JSON.stringify(lgArr)', res.length, res.slice(0, 200) + '...')
         }
         catch (err) {
             console.log('JSON.stringify(lgArr) catch', err)
@@ -143,7 +155,7 @@ async function testLarge() {
 
         await json.stringify(lgArr)
             .then((res) => {
-                console.log('json.stringify(lgArr) then', res.length, res.substr(0, 200) + '...')
+                console.log('json.stringify(lgArr) then', res.length, res.slice(0, 200) + '...')
             })
             .catch((err) => {
                 console.log('json.stringify(lgArr) catch', err)
@@ -219,7 +231,7 @@ async function testStream() {
                 let res = fs.readFileSync(fp, 'utf8')
                 fs.unlinkSync(fp)
                 console.log('res.length', res.length)
-                console.log('res', res.substr(0, 200) + '...')
+                console.log('res', res.slice(0, 200) + '...')
                 resolve()
             })
 

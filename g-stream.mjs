@@ -58,7 +58,7 @@ async function testStream() {
                 let res = fs.readFileSync(fp, 'utf8')
                 fs.unlinkSync(fp)
                 console.log('res.length', res.length)
-                console.log('res', res.substr(0, 200) + '...')
+                console.log('res', res.slice(0, 200) + '...')
                 resolve()
             })
 
@@ -274,4 +274,4 @@ testStream()
     })
 
 
-//node --experimental-modules --es-module-specifier-resolution=node g-stream.mjs
+//node g-stream.mjs

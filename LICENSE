@@ -12,6 +12,14 @@ furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
+This project also incorporates code from the following upstream open-source projects, each licensed under the MIT License:
+
+- [into-stream](https://github.com/sindresorhus/into-stream) by sindresorhus
+- [from2](https://github.com/hughsk/from2) by hughsk
+- [JSONStream](https://github.com/dominictarr/JSONStream) by dominictarr
+- [through](https://github.com/dominictarr/through) by dominictarr
+- [json-stream-stringify](https://github.com/Faleij/json-stream-stringify) by Faleij
+
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE

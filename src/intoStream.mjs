@@ -1,6 +1,6 @@
 //fork from: https://github.com/sindresorhus/into-stream/blob/main/index.js
 // import from2 from 'from2'
-import from2 from './from2.mjs'
+import from2 from './from2.mjs' //將readable-stream改為stream, 避免重複減少打包體積
 import { Buffer } from 'buffer'
 import { setImmediate } from 'timers'
 import isPromise from 'wsemi/src/ispm.mjs'

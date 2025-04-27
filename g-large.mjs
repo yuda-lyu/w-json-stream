@@ -34,7 +34,7 @@ async function testLarge() {
 
         try {
             let res = JSON.stringify(arr)
-            console.log('JSON.stringify(arr)', res.length, res.substr(0, 200) + '...')
+            console.log('JSON.stringify(arr)', res.length, res.slice(0, 200) + '...')
         }
         catch (err) {
             console.log('JSON.stringify(arr) catch', err)
@@ -48,7 +48,7 @@ async function testLarge() {
 
         await json.stringify(arr)
             .then((res) => {
-                console.log('json.stringify(arr) then', res.length, res.substr(0, 200) + '...')
+                console.log('json.stringify(arr) then', res.length, res.slice(0, 200) + '...')
             })
             .catch((err) => {
                 console.log('json.stringify(arr) catch', err)
@@ -64,4 +64,4 @@ testLarge()
     })
 
 
-//node --experimental-modules --es-module-specifier-resolution=node g-large.mjs
+//node g-large.mjs

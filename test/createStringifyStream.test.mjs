@@ -55,8 +55,8 @@ describe(`createStringifyStream`, function() {
             console.log('writerStream finish')
             let res = fs.readFileSync(fp, 'utf8')
             fs.unlinkSync(fp)
-            // console.log(res.length, res.substr(0, 200) + '...')
-            res = res.substr(0, 200) + '...'
+            // console.log(res.length, res.slice(0, 200) + '...')
+            res = res.slice(0, 200) + '...'
             pm.resolve(res)
         })
 
