@@ -26,6 +26,7 @@ Special thanks to the original authors for their outstanding contributions — w
 To view documentation or get support, visit [docs](https://yuda-lyu.github.io/w-json-stream/global.html).
 
 ## Installation
+
 ### Using npm(ES6 module):
 ```alias
 npm i w-json-stream
@@ -449,9 +450,8 @@ testStream()
 ```
 
 ### In a browser(UMD module):
-> **Note:** w-json-stream does not dependent on any package.
 
-[Necessary] Add script for w-json-stream.
+Add script for w-json-stream.
 ```alias
 
 <!-- for basic -->
