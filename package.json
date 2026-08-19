@@ -1,13 +1,13 @@
 {
   "name": "w-json-stream",
-  "version": "1.0.30",
+  "version": "1.0.31",
   "main": "dist/w-json-stream.umd.js",
   "dependencies": {
     "jsonparse": "^1.3.1",
-    "wsemi": "^1.8.77"
+    "wsemi": "^1.8.78"
   },
   "devDependencies": {
-    "w-package-tools": "^1.1.13"
+    "w-package-tools": "^1.1.14"
   },
   "scripts": {
     "test": "mocha --parallel --timeout 60000",
