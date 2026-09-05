@@ -1,10 +1,10 @@
 {
   "name": "w-json-stream",
-  "version": "1.0.35",
+  "version": "1.0.36",
   "main": "dist/w-json-stream.umd.js",
   "dependencies": {
     "jsonparse": "^1.3.1",
-    "wsemi": "^1.8.84"
+    "wsemi": "^1.8.85"
   },
   "devDependencies": {
     "w-package-tools": "^1.1.15"
