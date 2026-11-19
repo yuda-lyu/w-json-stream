@@ -1,5 +1,5 @@
 /*!
- * w-json-stream v1.0.70
+ * w-json-stream v1.0.71
  * (c) 2018-2021 yuda-lyu(semisphere)
  * Released under the MIT License.
  */
