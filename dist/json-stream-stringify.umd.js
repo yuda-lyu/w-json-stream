@@ -1,5 +1,5 @@
 /*!
- * json-stream-stringify v1.0.72
+ * json-stream-stringify v1.0.73
  * (c) 2018-2021 yuda-lyu(semisphere)
  * Released under the MIT License.
  */
