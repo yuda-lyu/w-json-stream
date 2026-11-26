@@ -1,5 +1,5 @@
 /*!
- * into-stream v1.0.79
+ * into-stream v1.0.80
  * (c) 2018-2021 yuda-lyu(semisphere)
  * Released under the MIT License.
  */
